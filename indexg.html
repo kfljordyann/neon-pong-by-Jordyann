@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Pong Mobile & PC</title>
+   <link rel="stylesheet" href="styleg.css">
+</head>
+<body>
+
+    <h1>Neon Pong</h1>
+
+    <div id="menu">
+        <input type="text" id="p1Name" placeholder="Nom Joueur 1" value="Joueur 1">
+        <input type="text" id="p2Name" placeholder="Nom Joueur 2" value="IA">
+        
+        <select id="gameMode">
+            <option value="p1vIA">J1 vs IA</option>
+            <option value="p1vp2">J1 vs J2 (Tactile/Clavier)</option>
+            <option value="iavia">IA vs IA</option>
+        </select>
+
+        <select id="difficulty">
+            <option value="0.05">Difficulté : Facile</option>
+            <option value="0.12">Difficulté : Normal</option>
+            <option value="0.22">Difficulté : Expert</option>
+        </select>
+
+        <button onclick="startGame()">JOUER</button>
+        <p class="touch-hint">Mobile : Touchez votre côté de l'écran.<br>PC : Z/S et Flèches.</p>
+    </div>
+
+    <div id="game-container">
+        <div id="scoreboard">
+            <span id="score1">0</span>
+            <span id="score2">0</span>
+        </div>
+        <canvas id="pongCanvas" width="800" height="500"></canvas>
+    </div>
+
+    <div id="winner-screen">
+        <h2 id="winner-text"></h2>
+        <p id="match-details"></p>
+        <button onclick="resetMenu()">RETOUR</button>
+    </div>
+
+    <script src="scriptg.js"></script>
+</body>
+</html>
